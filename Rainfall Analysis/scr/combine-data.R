@@ -1,5 +1,5 @@
 melb_df <- read.table(
-  file = "melbourne.csv",
+  file = "data/melbourne.csv",
   header = TRUE,
   sep = ",",
   skip = 11)
@@ -7,7 +7,7 @@ melb_df <- read.table(
 mean_rainfall_melb <- as.numeric(melb_df[24,2:13])
 
 ox_df <- read.table(
-  file = "oxford.txt",
+  file = "data/oxford.txt",
   header = FALSE,
   col.names = c("year", "month", "x1", "x2", "x3", "rain", "x4"),
   skip = 7,
@@ -48,6 +48,6 @@ plot_df <- data.frame(
   average_rainfall = c(mean_rainfall_melb, mean_rainfall_ox))
 
 write.table(x = plot_df,
-            file = "average-rainfall.csv",
+            file = "processedData/average-rainfall.csv",
             sep = ",",
             row.names = FALSE)

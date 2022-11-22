@@ -1,6 +1,6 @@
 library(ggplot2)
 
-plot_df <- read.csv("average-rainfall.csv")
+plot_df <- read.csv("processedData/average-rainfall.csv")
 
 g <- ggplot(
   data = plot_df,
@@ -22,7 +22,7 @@ g <- ggplot(
   theme_classic() +
   theme(axis.text.x = element_text(angle = -45))
 
-ggsave(filename = "result.png",
+ggsave(filename = "out/result.png",
        plot = g,
        height = 10.5, width = 14.8,
        units = "cm")
